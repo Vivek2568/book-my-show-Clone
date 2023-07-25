@@ -1,37 +1,33 @@
 import React from "react";
 import { FaRegThumbsUp } from "react-icons/fa";
-const MovieHero = () => {
+import LaunchRazorPay from "../../pages/RazorPayButton";
+import { useParams } from "react-router-dom";
+import { useState,useEffect } from "react";
+import axios from "axios";
+function MovieHero (props) {
+    
+    
     return (
         <>
-            <div className="md:hidden">
-                <div>
-                    <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/mission-impossible-dead-reckoning--part-one-et00329481-1688284554.jpg"
-                        alt="Mission Impossible"
-                    />
-                </div>
-            </div>
-            <div className="hidden md:block lg:hidden">
-                <div>
-                    <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/mission-impossible-dead-reckoning--part-one-et00329481-1688284554.jpg"
-                        alt="Mission Impossible"
-                    />
-                </div>
-            </div>
-            <div className=" relative hidden lg:block" style={{ height: "30rem" }}>
+            <div className=" relative m-auto " style={{ height: "35rem" }}>
                 <div className="absolute h-full w-full " style={{ backgroundImage: "linear-gradient(90deg, rgb(26, 26, 26) 24.97%, rgb(26, 26, 26) 38.3%, rgba(26, 26, 26, 0.04) 97.47%, rgb(26, 26, 26) 100%)" }} />
-                <div className=" absolute flex flex-row z-30 w-100 h-96 top-16 left-52 gap-10">
-                    <div >
-                        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/mission-impossible-dead-reckoning--part-one-et00329481-1688284554.jpg" className="w-full h-full rounded" />
+                <img src={`https://image.tmdb.org/t/p/original${props.Mddetails.backdrop_path}`}
+                    alt="Mission Impossible" className="h-full w-full" style={{ height: "35rem" }}
+                />
+                <div className=" absolute flex  items-center justify-between z-40  top-16 lg:left-52 md:left-32 left-12 gap-2 ">
+                   
+                   <div className="  hidden sm:block sm:w-2/3" >
+                        <img src={`https://image.tmdb.org/t/p/original${props.Mddetails.poster_path}`} className="md:w-72 rounded-lg md:h-96 w-60"/>
                     </div>
-                    <div className="z-40 flex flex-col items-start gap-4">
+                    <div className="z-40 flex flex-col items-start gap-4 pr-10 m-auto  md:w-2/3">
                         <div className="w-1/2">
 
-                            <h1 className="text-white font-extrabold text-4xl leading-10">Mission Impossible: Dead Reckoning - Part One</h1>
+                            <h1 className="text-white font-extrabold text-4xl leading-10">{props.Mddetails.title}</h1>
 
                         </div>
                         <div>
-                            <h3 className="text-white font bold flex flex-row gap-3">
-                                <FaRegThumbsUp className="text-green-300 color-green-300" /> 155.6K are interested
+                            <h3 className="text-white font bold flex flex-row justify-between gap-3 m-auto">
+                                <FaRegThumbsUp className="text-green-300 color-green-300" /> {(props.Mddetails.popularity)}K
                             </h3>
                         </div>
                         <div className="flex flex-row border-white gap-3  rounded border">
@@ -56,15 +52,12 @@ const MovieHero = () => {
                          
                         </div>
                         <div className="bg-red-500 hover:bg-red-700  rounded-md">
-                            <button className="text-white text-md px-16 py-3 hover:underline">Book tickets</button>
+                            <button  onClick ={LaunchRazorPay} className="text-white text-md px-16 py-3 hover:underline">Book tickets</button>
                         </div>
 
                     </div>
+                   
                 </div>
-
-                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/mission-impossible-dead-reckoning--part-one-et00329481-1688284554.jpg"
-                    alt="Mission Impossible" className="h-full w-full"
-                />
             </div>
            
         </>

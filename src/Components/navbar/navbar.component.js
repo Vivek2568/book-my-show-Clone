@@ -11,7 +11,9 @@ const NavSm = () => {
                 </div>
                 <div className="flex items-centre gap-3">
                 <div className="bg-red-600 rounded-lg px-2 py-2 ">
-                    <button className="font-bold ">Use App</button>
+                  <a href="https://play.google.com/store/apps/details?id=com.bt.bms&hl=en_IN&gl=US&pli=1">
+                  <button className="font-bold ">Sign In</button>
+                  </a>
                 </div>
                 <div className="w-8 h-8">
                     <BiSearch className="w-full h-full my-2" />
@@ -52,7 +54,9 @@ const Navlg = () => {
 
                     <span className="text-gray-400 text-md font-bold flex items-center hover:text-white cursor:hand"> Delhi-NCR <BiChevronDown />
                     </span>
-                    <button className="bg-red-600 text-white text-sm rounded px-2 py-1">Sign in</button>
+                 <a href="https://play.google.com/store/apps/details?id=com.bt.bms&hl=en_IN&gl=US&pli=1">
+                 <button className="bg-red-600 text-white text-sm rounded px-2 py-1">Use App</button>
+                 </a>
                     <div className="w-8 h-8 text-white">
                         <BiMenu className=" w-full h-full" />
                     </div>

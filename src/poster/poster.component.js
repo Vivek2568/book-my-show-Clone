@@ -1,19 +1,26 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 // props-> src,title,subtitle,isDark(bool)
- const Poster =(props) => {
-    return(
+
+const Poster = (props) => {
+  
+    return (
         <>
-        <div className="flex flex-col items-start gap-2 px-3 py-3">
-        <div className="h-80">
-         <img src={props.src} className=" w-full h-full rounded-lg"></img>
-        </div>
-        <div>
-            <h3 className={`text-lg font-bold ${props.isDark ? "text-white" : "text-grey-700"}`}
-            >{props.title} </h3>
-            <p className={`text-sm  ${props.isDark ? "text-white" : "text-grey-700"}`}>{props.subtitle}</p>
-        </div>
-    </div>
-    </>
+           <Link to={`/movie/${props.id}`}>
+           <div className="flex flex-col  md:px-4 px-2 ">
+                <div className=" ">
+                    <img src={`https://image.tmdb.org/t/p/original${props.poster_path}`} className="w-full h-full rounded-lg hover:shadow-xl hover:shadow-rose-950 transition-all duration-300"></img>
+                </div>
+                <div>
+                    <h3 className={`text-lg font-semibold ${props.isDark ? "text-white " : "text-grey-700"}`}
+                    >{props.title} </h3>
+                    <p className={`text-sm  ${props.isDark ? "text-white" : "text-grey-700"}`}>{props.subtitle}</p>
+                </div>
+            </div>
+           </Link>
+        </>
     )
 }
 export default Poster;

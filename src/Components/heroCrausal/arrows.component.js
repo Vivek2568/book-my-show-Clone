@@ -1,28 +1,52 @@
 import React from "react";
- export const NextArrow =(props)=>{
-    //const {className ,style,onclick}
+export function NextArrow(props) {
+    const { className, style, onClick } = props;
     return (
-        <>
-        <div 
-        className={props.className}
-        style={{ ...props.style, backgroundColor:"red" }}
-        onClick={props.onClick}
+        <div
+            className={className}
+            style={{
+                ...style,
+                backgroundColor: "black",
+                borderRadius: "5px 5px 5px 5px",
+                opacity: 0.6,
+                margin: "auto 1.55rem",
+                zIndex: 2,
+                width: "2.5rem",
+                height: "2.5rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                ...props.extra
+            }}
+            onClick={onClick}
         />
-        </>
-    )
+    );
 };
 
-export const PrevArrow =(props)=>{
-    //const {className ,style,onclick}
+
+
+export function PrevArrow(props) {
+    const { className, style, onClick } = props;
     return (
-        <>
         <div
-        className={props.className}
-        style={{ ...props.style, backgroundColor:"red"  }}
-        onClick={props.onClick}
+            className={className}
+            style={{
+                ...style,
+                backgroundColor: "black",
+                borderRadius: "5px 5px 5px 5px",
+                opacity: 0.6,
+                margin: "auto 1.55rem",
+                zIndex: 2,
+                width: "2.5rem",
+                height: "2.5rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                ...props.extra
+            }}
+            onClick={onClick}
         />
-        </>
-    )
+    );
 };
 
 

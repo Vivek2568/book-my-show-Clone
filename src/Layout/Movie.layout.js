@@ -5,8 +5,7 @@ import MovieNavbar from "../Components/navbar/movie.navbar";
 const MovieLayout =(props)=>{
     return (
         <>
-        
-        <MovieNavbar/> 
+        <MovieNavbar {...props}/> 
         {props.children}
 
            </>
