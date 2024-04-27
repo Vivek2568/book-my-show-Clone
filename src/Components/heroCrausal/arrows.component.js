@@ -29,7 +29,7 @@ export function PrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <div
-            className={className}
+            // className={className}
             style={{
                 ...style,
                 backgroundColor: "black",

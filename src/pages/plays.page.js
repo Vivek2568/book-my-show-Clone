@@ -5,23 +5,24 @@ import PlaysFilters from "../Components/plays.filters/plays.filter.component";
 import { useParams } from "react-router-dom";
 import FooterPart from "../footer/footersection";
 
-const Plays = (props) => {
+const Plays = () => {
     const params = useParams();
     const map = {
-        'trending' : '/trending/movie/day',
-        'popular'  : '/movie/popular',
-        'top_rated' : '/movie/top_rated',
+        'trending': '/trending/movie/day',
+        'popular': '/movie/popular',
+        'top_rated': '/movie/top_rated',
         'link': "/movie/now_playing"
     }
     const [trendingmovies, settrendingmovies] = useState([]);
     useEffect(() => {
         const requesttrendingmovies = async () => {
             const gettrendingmovies = await axios.get(map[params.path]);
+            //console.log(gettrendingmovies.data.results);
             settrendingmovies(gettrendingmovies.data.results);
         }
         requesttrendingmovies();
     }, []);
-    
+
     return (
         <>
             <div className=" mx-auto md:flex flex-row  bg-gray-100">
@@ -52,8 +53,8 @@ const Plays = (props) => {
 
                 </div>
             </div>
-          
-           
+
+
         </>
     )
 }

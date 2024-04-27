@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import {BsChevronRight} from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 const PosterSlider = (props) => {
+  console.log(props)
   const settingss={
     infinite: true,
     autoplay: false,
