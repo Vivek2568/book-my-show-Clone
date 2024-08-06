@@ -28,7 +28,7 @@ const Navlg = () => {
         <>
             <div className="container mx-auto px-4 flex items-center justify-between">
                 <div className="flex items-center w-1/2">
-                <a href="http://localhost:3000/">
+                <a href="https://book-my-show-vivek.vercel.app/">
                     <div className="w-40 h-8 px-3">
                         <img src="https://asset.brandfetch.io/id4J58sqa_/idaQ1GyW_d.svg?updated=1674733846500" alt="logo" className="w-full h-full"></img>
                     </div>
